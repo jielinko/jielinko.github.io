@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Accueil
           </a>
         </li>
       
@@ -204,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -247,7 +247,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/21/standard-model/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/24/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jim">
@@ -269,127 +269,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/21/standard-model/" itemprop="url">
-                  文章模板
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-21T21:52:43+08:00">
-                2017-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/21/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jim">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jim's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/21/hello-world/" itemprop="url">
+                <a class="post-title-link" href="/2017/03/24/hello-world/" itemprop="url">
                   2017-03-24 Hello World!
                 </a>
               
@@ -404,10 +284,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-21T20:19:32+08:00">
-                2017-03-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-24T20:04:59+08:00">
+                2017-03-24
               </time>
             
 
@@ -456,8 +336,128 @@
 <h3 id="部署到远程网站"><a href="#部署到远程网站" class="headerlink" title="部署到远程网站"></a>部署到远程网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>更多信息: <a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="external">部署</a></p>
 <h3 id="快速发布"><a href="#快速发布" class="headerlink" title="快速发布"></a>快速发布</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">清除缓存文件 (db.json) 和已生成的静态文件 (public)。</div><div class="line">在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</div><div class="line"></div><div class="line">$ hexo generate(g)</div><div class="line">生成静态文件。</div><div class="line"><span class="_">-d</span>, --deploy	文件生成后立即部署网站</div><div class="line">-w, --watch	监视文件变动</div><div class="line"></div><div class="line">$ hexo deploy(d)</div><div class="line">部署网站。</div><div class="line">-g, --generate	部署之前预先生成静态文件</div></pre></td></tr></table></figure>
-<p>参考链接:<br>0,<a href="http://www.jianshu.com/p/f66103553c45" target="_blank" rel="external">使用Hexo + Next搭建静态博客</a><br>1,<a href="http://js.sunansheng.com/p/9df4aba9c25a" target="_blank" rel="external">在Github上利用hexo搭建个人博客</a><br>2,<a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">HEXO+Github,搭建属于自己的博客</a><br>3,<a href="http://www.yczmm.com/hexo-deploy%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3.html" target="_blank" rel="external">hexo deploy报错解决</a><br>4,<a href="http://www.tuicool.com/articles/zeIZJzv" target="_blank" rel="external">hexo博客更换主题</a><br>5,<a href="http://www.jianshu.com/p/e99ed60390a8" target="_blank" rel="external">20分钟教你使用hexo搭建github博客</a><br>6,<a href="http://www.maintao.com/2014/hexo-theme-from-scratch/" target="_blank" rel="external">从零开始定制hexo主题</a><br>7,<a href="http://jovey-zheng.github.io/blog/" target="_blank" rel="external">模范网站1</a><br>8,<a href="http://notes.iissnan.com/" target="_blank" rel="external">模范网站2</a><br>9,<a href="https://xuanwo.org/2015/03/26/hexo-intor/" target="_blank" rel="external">史上最详细的Hexo博客搭建图文教程</a></p>
+<p>参考链接:<br>0,<a href="http://www.jianshu.com/p/f66103553c45" target="_blank" rel="external">使用Hexo + Next搭建静态博客</a><br>1,<a href="http://js.sunansheng.com/p/9df4aba9c25a" target="_blank" rel="external">在Github上利用hexo搭建个人博客</a><br>2,<a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">HEXO+Github,搭建属于自己的博客</a><br>3,<a href="http://www.yczmm.com/hexo-deploy%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3.html" target="_blank" rel="external">hexo deploy报错解决</a><br>4,<a href="http://www.tuicool.com/articles/zeIZJzv" target="_blank" rel="external">hexo博客更换主题</a><br>5,<a href="http://www.jianshu.com/p/e99ed60390a8" target="_blank" rel="external">20分钟教你使用hexo搭建github博客</a><br>6,<a href="http://www.maintao.com/2014/hexo-theme-from-scratch/" target="_blank" rel="external">从零开始定制hexo主题</a><br>7,<a href="http://jovey-zheng.github.io/blog/" target="_blank" rel="external">模范网站1</a><br>8,<a href="http://notes.iissnan.com/" target="_blank" rel="external">模范网站2</a><br>9,<a href="http://blog.guowenfh.com/" target="_blank" rel="external">模范网站3</a><br>9,<a href="https://xuanwo.org/2015/03/26/hexo-intor/" target="_blank" rel="external">史上最详细的Hexo博客搭建图文教程</a></p>
 
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/21/standard-model/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jim">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jim's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/21/standard-model/" itemprop="url">
+                  文章模板
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-21T21:52:43+08:00">
+                2017-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
           
         
       
@@ -537,7 +537,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">articles</span>
               </a>
             </div>
           
@@ -591,11 +591,11 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Theme -
+  Thème -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
