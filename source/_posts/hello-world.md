@@ -1,5 +1,5 @@
 ---
-title: 2017-03-24 Hello World!
+title: 2017-03-24 Hexo的博客程序搭建-维护笔记
 ---
 最近整理学习资料,发现在学习过程中总结的一些知识点都很分散,也不系统,考虑再三后还是决定自己搭建一个博客平台。再深入比较ghost,Jekyll,和hexo后选择了Hexo。
 
@@ -8,13 +8,16 @@ title: 2017-03-24 Hello World!
 Hexo中文官网: [Hexo中文](https://hexo.io/zh-cn/docs/index.html)！
 NextT主题官网: [hexo-theme-next](https://github.com/iissnan/hexo-theme-next)
 
-## 快速开始
+## 第一节 博客搭建
 
 ### 新建新文章
 
 ``` bash
-$ hexo new "My New Post"
+$ hexo new "new article"
 ```
+此时在source/_posts目录下面，多了一个new-article.md的文件。
+
+使用MD编辑器打开后就可以开始写作。
 
 更多信息: [写作](https://hexo.io/zh-cn/docs/writing.html)
 
@@ -72,3 +75,117 @@ $ hexo deploy(d)
 8,[模范网站2](http://notes.iissnan.com/)
 9,[模范网站3](http://blog.guowenfh.com/)
 9,[史上最详细的Hexo博客搭建图文教程](https://xuanwo.org/2015/03/26/hexo-intor/)
+
+## 第二节 博客维护
+
+博客程序搭建完毕后就设计到了多台电脑共同管理hexo博客的课题。经过思考和实践。采取在 username.github.io 仓库设置分支 hexo-source 来托管代码源文件。而 master 分支来托管生成的静态网页。方案步骤如下：
+
+
+### 第一步 搭建博客程序
+
+(详情见第一节)
+
+此时远程仓库只有一个 master分支 托管的为生成的静态网页，文件列表如下:
+
+``` bash
+2017/03
+archives
+css
+images
+js/src
+lib
+index.html
+
+```
+
+### 第二步 创建本地仓库和远程分支
+
+1,先删除主题文件下的.git文件，可以直接删除或者执行下面的命令
+
+``` bash
+$ rm -rf .git
+```
+
+2,仓库和分支操作
+
+以下操作均在本地博客程序根目录操作
+
+``` bash
+$ git init    //初始化本地仓库
+$ git checkout -b hexo-source    //创建本地分支 hexo-source 并切换到该分支
+或者(git branch hexo-source; git checkout hexo-source;)
+
+$ git remote add origin git@github.com:username/username.github.io.git  //关联本地分支到远程库
+$ git add . 
+$ git commit -m "提交说明"
+$ git push origin hexo-source //推送代码源文件到远程 hexo-source 分支
+```
+
+此时远程仓库新增了一个 hexo-source 分支 托管的为代码源文件，文件列表如下:
+
+``` bash
+scaffolds
+source/_posts
+themes
+.gitignore
+.npmignore
+_config.yml
+package.json
+readme.md
+```
+
+至此，代码源文件和生成的静态文件均托管完毕。另外需要修改远程仓库hexo-source分支为默认分支。方便我们下次推送和换电脑后的博客更新
+
+### 第三步 日常的改动的流程
+
+在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理:
+
+1,将修改后的代码源文件推动到github远程分支 hexo-source
+
+在本地博客程序根目录依次执行:
+
+``` bash
+$ git branch hexo-source  //切换到本地 hexo-source 分支
+$ git add .
+$ git commit -m "提交说明"
+$ git push origin hexo-source  //推送代码源文件到 github 远程 hexo-source 分支
+
+```
+此时代码源文件已经更新并推动到github远程分支 hexo-source
+
+2,发布网站到远程仓库master分支上
+
+在本地博客程序根目录依次执行:
+
+``` bash
+$ hexo clean
+$ hexo g -d
+
+```
+此时生成的静态网页已经更新并推动到github远程分支master，同时完成网站发布
+
+
+### 第四步 新电脑上修改博客流程
+
+1,克隆远程仓库 hexo-source 分支(修改远程仓库hexo-source分支为默认分支)
+
+``` bash
+$ git clone git@github.com:username/username.github.io.git blog(本地博客程序仓库名)
+```
+2,在 blog 仓库下依次执行
+
+```bash
+npm install hexo
+npm install
+npm install hexo-deployer-git
+```
+来安装hexo博客程序运行需要的node程序模块。如果博客程序根目录的.gitignore文件中没有node_modules/。
+这时候就不需要上面的命令了。不过代码托管量就变大了很多。会影响每次推送的速度。
+
+
+自此，一个方便快捷，易于管理，可移植，抗风险的博客程序就完成了,接下来就好好享受写作的乐趣吧。
+
+
+参考链接:
+0,[多台电脑共同管理hexo博客](https://vonfly.github.io/2016/02/18/hexo-version-control/)
+1,[使用hexo，如果换了电脑怎么更新博客？](https://www.zhihu.com/question/21193762/answer/20811453)
