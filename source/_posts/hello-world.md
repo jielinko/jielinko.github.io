@@ -1,12 +1,17 @@
 ---
-title: 2017-03-24 Hexo的博客程序搭建-维护笔记
+title: 2017-03-24 博客开通暨Hexo博客程序搭建和维护
+categories:   # 这里写的分类会自动汇集到 categories 页面上，分类可以多级
+ - 开发工具
+tags: # 这里写的标签会自动汇集到 tags 页面上
+ - Hexo
+ - Git
 ---
 最近整理学习资料,发现在学习过程中总结的一些知识点都很分散,也不系统,考虑再三后还是决定自己搭建一个博客平台。再深入比较ghost,Jekyll,和hexo后选择了Hexo。
 
 该方案基于 Hexo + nextT + github。参考了这篇[hexo入门](http://www.maintao.com/2014/hexo-beginner%27s-guide/)指南用起来确实很爽,第一篇博文留给Hexo,以表敬意！
 
 Hexo中文官网: [Hexo中文](https://hexo.io/zh-cn/docs/index.html)！
-NextT主题官网: [hexo-theme-next](https://github.com/iissnan/hexo-theme-next)
+NextT主题官网: [hexo-theme-next](http://theme-next.iissnan.com/)
 
 ## 第一节 博客搭建
 
@@ -61,6 +66,10 @@ $ hexo deploy(d)
 部署网站。
 -g, --generate	部署之前预先生成静态文件
 ```
+### 博客的站点配置和Next主题配置
+
+[徒手教你建自己的博客](https://123sunxiaolin.github.io/2016/08/27/%E5%BE%92%E6%89%8B%E6%95%99%E4%BD%A0%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/)
+见 3.0.4 节 和 3.0.5 节
 
 
 参考链接:
@@ -74,7 +83,8 @@ $ hexo deploy(d)
 7,[模范网站1](http://jovey-zheng.github.io/blog/)
 8,[模范网站2](http://notes.iissnan.com/)
 9,[模范网站3](http://blog.guowenfh.com/)
-9,[史上最详细的Hexo博客搭建图文教程](https://xuanwo.org/2015/03/26/hexo-intor/)
+10,[史上最详细的Hexo博客搭建图文教程](https://xuanwo.org/2015/03/26/hexo-intor/)
+
 
 ## 第二节 博客维护
 
@@ -184,7 +194,7 @@ npm install hexo-deployer-git
 
 
 自此，一个方便快捷，易于管理，可移植，抗风险的博客程序就完成了,接下来就好好享受写作的乐趣吧。
-
+ 
 
 参考链接:
 0,[多台电脑共同管理hexo博客](https://vonfly.github.io/2016/02/18/hexo-version-control/)
