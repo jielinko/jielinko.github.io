@@ -289,11 +289,11 @@ highlight_theme: night eighties
 
 # 打赏配置
 # 打赏说明文本
-reward_comment: 坚持原创技术分享,请我喝杯咖啡吧！
+# reward_comment: 坚持原创技术分享,请我喝杯咖啡吧！
 # 微信收款二维码
-wechatpay: /uploads/images/wechat-reward-image.png
+# wechatpay: /uploads/images/wechat-reward-image.png
 # 支付宝收款二维码
-alipay: /uploads/images/alipay-reward-image.png
+# alipay: /uploads/images/alipay-reward-image.png
 
 # Wechat Subscriber - 微信订阅
 # wechat_subscriber:
@@ -425,16 +425,16 @@ busuanzi_count:
   enable: true
   # custom uv span for the whole site
   site_uv: true
-  site_uv_header: <i class="fa fa-user"></i>
-  site_uv_footer:
+  site_uv_header: <i class="fa fa-user"></i> 您是本站第
+  site_uv_footer: 位访客
   # custom pv span for the whole site
   site_pv: true
-  site_pv_header: <i class="fa fa-eye"></i>
-  site_pv_footer:
+  site_pv_header: <i class="fa fa-eye"></i> 本站共浏览
+  site_pv_footer: 次
   # custom pv span for one page only
   page_pv: true
-  page_pv_header: <i class="fa fa-file-o"></i>
-  page_pv_footer:
+  page_pv_header: <i class="fa fa-file-o"></i> 此文章共浏览
+  page_pv_footer: 次
 
 
 # Tencent analytics ID

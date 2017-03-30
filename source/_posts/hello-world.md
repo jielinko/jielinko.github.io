@@ -10,8 +10,11 @@ tags: # 这里写的标签会自动汇集到 tags 页面上
 
 该方案基于 Hexo + nextT + github。参考了这篇[hexo入门](http://www.maintao.com/2014/hexo-beginner%27s-guide/)指南用起来确实很爽,第一篇博文留给Hexo,以表敬意！
 
-Hexo中文官网: [Hexo中文](https://hexo.io/zh-cn/docs/index.html)！
-NextT主题官网: [hexo-theme-next](http://theme-next.iissnan.com/)
+Hexo中文官网: [Hexo中文](https://hexo.io/zh-cn/docs/index.html)！   
+NextT主题官网: [hexo-theme-next](http://theme-next.iissnan.com/)   
+Markdown语法: [Markdown](http://www.appinn.com/markdown/)   
+
+<!--more-->
 
 ## 第一节 博客搭建
 
