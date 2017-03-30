@@ -96,7 +96,7 @@
 <meta property="og:description" content="此笔记由博主根据php学院教程结合自身情况和工作需要做的总结笔记，以备查漏补缺，内容仅供参考，版权归其所有。
 基本语法数据类型定界符声明1).在变量后面的等号写三个小于号（&amp;lt;&amp;lt;&amp;lt;）。2).然后在&amp;lt;&amp;lt;&amp;lt;后面写上字符（建议英文大写字符）。如下例中的：ABC3).然后换行写上任意想写的字符4).写完后，顶行。在行最开始处，再写上&amp;lt;&amp;lt;&amp;lt;后面的字符和分号">
 <meta property="og:image" content="http://i.imgur.com/p4zO5iT.png">
-<meta property="og:updated_time" content="2017-03-30T12:08:18.412Z">
+<meta property="og:updated_time" content="2017-03-30T12:11:21.439Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017-03-30 php学习笔记">
 <meta name="twitter:description" content="此笔记由博主根据php学院教程结合自身情况和工作需要做的总结笔记，以备查漏补缺，内容仅供参考，版权归其所有。
@@ -376,6 +376,7 @@
         <p>此笔记由博主根据<a href="www.phpxy.com">php学院教程</a>结合自身情况和工作需要做的总结笔记，以备查漏补缺，内容仅供参考，版权归其所有。</p>
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="定界符声明"><a href="#定界符声明" class="headerlink" title="定界符声明"></a>定界符声明</h4><p>1).在变量后面的等号写三个小于号（&lt;&lt;&lt;）。<br>2).然后在&lt;&lt;&lt;后面写上字符（建议英文大写字符）。如下例中的：ABC<br>3).然后换行写上任意想写的字符<br>4).写完后，顶行。在行最开始处，再写上&lt;&lt;&lt;后面的字符和分号。如下例中的：ABC;</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line"><span class="variable">$dingjie</span> = &lt;&lt;&lt;ABC</div><div class="line">   如果</div><div class="line">        非要在这个滚犊子</div><div class="line">    前</div><div class="line">        面&lt;br /&gt;</div><div class="line">       加上一段</div><div class="line">    &lt;i&gt;距离的话&lt;/i&gt;</div><div class="line">    我想说：&lt;h1&gt;思想有多远，你就跟我滚多远&lt;/h1&gt;</div><div class="line">ABC;</div><div class="line"><span class="built_in">echo</span> <span class="variable">$dingjie</span>;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="双引号和单引号的区别【面试重点】"><a href="#双引号和单引号的区别【面试重点】" class="headerlink" title="双引号和单引号的区别【面试重点】"></a>双引号和单引号的区别【面试重点】</h4><p>1,双引号解析变量，但是单引号不解析变量。</p>
 <p>双引号需要解析变量，因此双引号的效率没有单引号高。我们如果为了更高的效率，我们通常使用单引号。</p>
 <p>2,在双引号里面插入变量，变量后面如果有英文或中文字符，它会把这个字符和变量拼接起来，视为一整个变量。一定要在变量后面接上特殊字符，例如空格等分开。</p>
@@ -386,7 +387,6 @@
 <p>6,双号和单引号可以互插！！！双引号当中插入单引号，单引号当中插入变量，这个变量会被解析。</p>
 <p>7,神奇的字符串拼接胶水——（.）点，用来拼接字符串。</p>
 <p>8,我们将定界符声明字符串视为双引号一样的功能来看待。</p>
-<a id="more"></a>
 <h4 id="var-dump"><a href="#var-dump" class="headerlink" title="var_dump"></a>var_dump</h4><p>var_dump() 是一个函数。向括号()中间插入变量。这个函数，会打印出来数据类型，还会对应显示变量的长度和值。</p>
 <h4 id="NULL类型"><a href="#NULL类型" class="headerlink" title="NULL类型"></a>NULL类型</h4><p>空在英文里面表示是null，它是代表没有。空(null)不是false，不是0，也不是空格。</p>
 <p>【重点】知道null产生的三种情况，学习empty 和 isset两个函数的区别。</p>
