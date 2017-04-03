@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端开发,后端开发,PHP,Javascript,thinkPHP,wordpress" />
+  <meta name="keywords" content="php,后端开发,thinkPHP,RBAC," />
 
 
 
@@ -87,15 +87,16 @@
 
 
 
-<meta name="description" content="Enjoy coding and writing!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jim的一亩三分">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="RBAC权限管理系统—(1)数据表设计一、什么是RBAC基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。在一个组织中，角色是为了完成各种工作而创造，用户则依据它的责任和资格来被指派相应的角色，用户可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017-04-03 RBAC权限管理系统---(1)数据表设计">
+<meta property="og:url" content="http://yoursite.com/2017/04/03/rbac/index.html">
 <meta property="og:site_name" content="Jim的一亩三分">
-<meta property="og:description" content="Enjoy coding and writing!">
+<meta property="og:description" content="RBAC权限管理系统—(1)数据表设计一、什么是RBAC基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。在一个组织中，角色是为了完成各种工作而创造，用户则依据它的责任和资格来被指派相应的角色，用户可以">
+<meta property="og:updated_time" content="2017-04-03T03:33:35.329Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jim的一亩三分">
-<meta name="twitter:description" content="Enjoy coding and writing!">
+<meta name="twitter:title" content="2017-04-03 RBAC权限管理系统---(1)数据表设计">
+<meta name="twitter:description" content="RBAC权限管理系统—(1)数据表设计一、什么是RBAC基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。在一个组织中，角色是为了完成各种工作而创造，用户则依据它的责任和资格来被指派相应的角色，用户可以">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/03/rbac/"/>
 
 
 
 
 
-  <title> Jim的一亩三分 </title>
+  <title> 2017-04-03 RBAC权限管理系统---(1)数据表设计 | Jim的一亩三分 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,9 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -259,9 +258,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -291,10 +290,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/03/rbac/" itemprop="url">
-                  2017-04-03 RBAC权限管理系统---(1)数据表设计
-                </a>
+                2017-04-03 RBAC权限管理系统---(1)数据表设计
               
             
           </h1>
@@ -351,6 +347,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 此文章共浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
 
           
 
@@ -367,9 +368,7 @@
       
 
       
-        
-          
-            <h1 id="RBAC权限管理系统—-1-数据表设计"><a href="#RBAC权限管理系统—-1-数据表设计" class="headerlink" title="RBAC权限管理系统—(1)数据表设计"></a>RBAC权限管理系统—(1)数据表设计</h1><h2 id="一、什么是RBAC"><a href="#一、什么是RBAC" class="headerlink" title="一、什么是RBAC"></a>一、什么是RBAC</h2><p>基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。<br>在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。<br>在一个组织中，角色是为了完成各种工作而创造，用户则依据它的责任和资格来被指派相应的角色，用户可以很容易地从一个角色被指派到另一个角色。角色可依新的需求和系统的合并而赋予新的权限，而权限也可根据需要而从某角色中回收。角色与角色的关系可以建立起来以囊括更广泛的客观情况。</p>
+        <h1 id="RBAC权限管理系统—-1-数据表设计"><a href="#RBAC权限管理系统—-1-数据表设计" class="headerlink" title="RBAC权限管理系统—(1)数据表设计"></a>RBAC权限管理系统—(1)数据表设计</h1><h2 id="一、什么是RBAC"><a href="#一、什么是RBAC" class="headerlink" title="一、什么是RBAC"></a>一、什么是RBAC</h2><p>基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。<br>在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。<br>在一个组织中，角色是为了完成各种工作而创造，用户则依据它的责任和资格来被指派相应的角色，用户可以很容易地从一个角色被指派到另一个角色。角色可依新的需求和系统的合并而赋予新的权限，而权限也可根据需要而从某角色中回收。角色与角色的关系可以建立起来以囊括更广泛的客观情况。</p>
 <h2 id="二、ThinkPHP中的RBAC"><a href="#二、ThinkPHP中的RBAC" class="headerlink" title="二、ThinkPHP中的RBAC"></a>二、ThinkPHP中的RBAC</h2><p>通过 5 张表实现权限控制：用户表(think_user),角色表(think_role)-也是用户分组表,权限表(think_node)-操作节点,用户角色表(think_role_user)-用户和角色(用户组)的对应,角色权限表(think_access)-各个操作和角色(用户组）的对应(node_role);</p>
 <h3 id="数据表分析"><a href="#数据表分析" class="headerlink" title="数据表分析"></a>数据表分析</h3><p>think_user:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">id(用户标识)</div><div class="line">username(用户名)</div><div class="line">password(密码)</div><div class="line">logintime(登录时间)</div><div class="line">loginip(登录IP)</div><div class="line">status(状态)</div></pre></td></tr></table></figure></p>
 <p>think_role:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">id(角色标识)</div><div class="line">name(名称)</div><div class="line">pid(角色识别)</div><div class="line">status(状态)</div><div class="line">remark(备注)</div></pre></td></tr></table></figure></p>
@@ -379,340 +378,78 @@
 <h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line">-- Database: `tp5-rbac`</div><div class="line">--</div><div class="line"></div><div class="line">-- --------------------------------------------------------</div><div class="line"></div><div class="line">--</div><div class="line">-- 表的结构 `think_access`</div><div class="line">--</div><div class="line"></div><div class="line">CREATE TABLE IF NOT EXISTS `think_access` (</div><div class="line">  `role_id` smallint(6) unsigned NOT NULL,</div><div class="line">  `node_id` smallint(6) unsigned NOT NULL,</div><div class="line">  `level` tinyint(1) NOT NULL,</div><div class="line">  `pid` smallint(6) unsigned NOT NULL,</div><div class="line">  `module` varchar(50) DEFAULT NULL,</div><div class="line">  PRIMARY KEY (`role_id`,`node_id`),</div><div class="line">  KEY `groupId` (`role_id`),</div><div class="line">  KEY `nodeId` (`node_id`)</div><div class="line">) ENGINE=MyISAM DEFAULT CHARSET=utf8;</div><div class="line"></div><div class="line">-- --------------------------------------------------------</div><div class="line"></div><div class="line">--</div><div class="line">-- 表的结构 `think_node`</div><div class="line">--</div><div class="line"></div><div class="line">CREATE TABLE IF NOT EXISTS `think_node` (</div><div class="line">  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,</div><div class="line">  `name` varchar(20) NOT NULL,</div><div class="line">  `title` varchar(50) DEFAULT NULL,</div><div class="line">  `status` tinyint(1) DEFAULT &apos;0&apos;,</div><div class="line">  `remark` varchar(255) DEFAULT NULL,</div><div class="line">  `sort` smallint(6) unsigned DEFAULT NULL,</div><div class="line">  `pid` smallint(6) unsigned NOT NULL,</div><div class="line">  `level` tinyint(1) unsigned NOT NULL,</div><div class="line">  PRIMARY KEY (`id`),</div><div class="line">  KEY `level` (`level`),</div><div class="line">  KEY `pid` (`pid`),</div><div class="line">  KEY `status` (`status`),</div><div class="line">  KEY `name` (`name`)</div><div class="line">) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;</div><div class="line"></div><div class="line">-- --------------------------------------------------------</div><div class="line"></div><div class="line">--</div><div class="line">-- 表的结构 `think_role`</div><div class="line">--</div><div class="line"></div><div class="line">CREATE TABLE IF NOT EXISTS `think_role` (</div><div class="line">  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,</div><div class="line">  `name` varchar(20) NOT NULL,</div><div class="line">  `pid` smallint(6) DEFAULT NULL,</div><div class="line">  `status` tinyint(1) unsigned DEFAULT NULL,</div><div class="line">  `remark` varchar(255) DEFAULT NULL,</div><div class="line">  PRIMARY KEY (`id`),</div><div class="line">  KEY `pid` (`pid`),</div><div class="line">  KEY `status` (`status`)</div><div class="line">) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;</div><div class="line"></div><div class="line">-- --------------------------------------------------------</div><div class="line"></div><div class="line">--</div><div class="line">-- 表的结构 `think_role_user`</div><div class="line">--</div><div class="line"></div><div class="line">CREATE TABLE IF NOT EXISTS `think_role_user` (</div><div class="line">  `role_id` mediumint(9) unsigned NOT NULL DEFAULT &apos;0&apos;,</div><div class="line">  `user_id` char(32) NOT NULL DEFAULT &apos;&apos;,</div><div class="line">  PRIMARY KEY (`role_id`,`user_id`),</div><div class="line">  KEY `group_id` (`role_id`),</div><div class="line">  KEY `user_id` (`user_id`)</div><div class="line">) ENGINE=MyISAM DEFAULT CHARSET=utf8;</div><div class="line"></div><div class="line">-- --------------------------------------------------------</div><div class="line"></div><div class="line">--</div><div class="line">-- 表的结构 `think_user`</div><div class="line">--</div><div class="line"></div><div class="line">CREATE TABLE IF NOT EXISTS `think_user` (</div><div class="line">  `id` int(11) NOT NULL AUTO_INCREMENT,</div><div class="line">  `username` varchar(20) NOT NULL,</div><div class="line">  `password` varchar(32) NOT NULL,</div><div class="line">  `logintime` int(11) DEFAULT NULL,</div><div class="line">  `loginip` varchar(30) DEFAULT NULL,</div><div class="line">  `status` tinyint(1) DEFAULT NULL,</div><div class="line">  PRIMARY KEY (`id`)</div><div class="line">) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;</div></pre></td></tr></table></figure>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h2><p><a href="http://www.cnblogs.com/tanteng/archive/2012/11/25/2787597.html" target="_blank" rel="external">ThinkPHP的RBAC（基于角色权限控制）详解</a><br><a href="http://itopic.org/rbac-design.html" target="_blank" rel="external">RBAC权限设计</a><br><a href="https://wenku.baidu.com/view/48f548c76137ee06eff918fe.html" target="_blank" rel="external">权限设计管理</a><br><a href="http://rongxh2010.iteye.com/blog/930648" target="_blank" rel="external">扩展RBAC用户角色权限设计方案</a><br><a href="http://blog.csdn.net/painsonline/article/details/7183613/" target="_blank" rel="external">RBAC权限管理</a><br><a href="https://www.lyblog.net/detail/552.html" target="_blank" rel="external">ThinkPHP中关于RBAC使用详解</a><br><a href="http://blog.sina.com.cn/s/blog_99730a660102vj7b.html" target="_blank" rel="external">ThinkPHP后台登录拦截器</a></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/24/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jim">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jim的一亩三分">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/24/hello-world/" itemprop="url">
-                  2017-03-24 博客开通暨Hexo博客程序搭建和维护
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T20:04:59+08:00">
-                2017-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/开发工具/" itemprop="url" rel="index">
-                    <span itemprop="name">开发工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/php/" rel="tag"># php</a>
           
-
+            <a href="/tags/后端开发/" rel="tag"># 后端开发</a>
           
-            
+            <a href="/tags/thinkPHP/" rel="tag"># thinkPHP</a>
           
-
+            <a href="/tags/RBAC/" rel="tag"># RBAC</a>
           
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          <p>最近整理学习资料,发现在学习过程中总结的一些知识点都很分散,也不系统,考虑再三后还是决定自己搭建一个博客平台。再深入比较ghost,Jekyll,和hexo后选择了Hexo。</p>
-<p>该方案基于 Hexo + nextT + github。参考了这篇<a href="http://www.maintao.com/2014/hexo-beginner%27s-guide/">hexo入门</a>指南用起来确实很爽,第一篇博文留给Hexo,以表敬意！</p>
-<p>Hexo中文官网: <a href="https://hexo.io/zh-cn/docs/index.html">Hexo中文</a>！<br>NextT主题官网: <a href="http://theme-next.iissnan.com/">hexo-theme-next</a><br>Markdown语法: <a href="http://www.appinn.com/markdown/">Markdown</a>   </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/24/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/24/hello-world/" rel="next" title="2017-03-24 博客开通暨Hexo博客程序搭建和维护">
+                <i class="fa fa-chevron-left"></i> 2017-03-24 博客开通暨Hexo博客程序搭建和维护
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/24/php-7-days-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jim">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jim的一亩三分">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/24/php-7-days-note/" itemprop="url">
-                  2017-03-30 php学习笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T20:04:59+08:00">
-                2017-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web开发/" itemprop="url" rel="index">
-                    <span itemprop="name">web开发</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>此笔记由博主根据<a href="www.phpxy.com">php学院教程</a>结合自身情况和工作需要做的总结笔记，以备查漏补缺，内容仅供参考，版权归其所有。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="定界符声明"><a href="#定界符声明" class="headerlink" title="定界符声明"></a>定界符声明</h4><p>1).在变量后面的等号写三个小于号（&lt;&lt;&lt;）。<br>2).然后在&lt;&lt;&lt;后面写上字符（建议英文大写字符）。如下例中的：ABC<br>3).然后换行写上任意想写的字符<br>4).写完后，顶行。在行最开始处，再写上&lt;&lt;&lt;后面的字符和分号。如下例中的：ABC;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line"><span class="variable">$dingjie</span> = &lt;&lt;&lt;ABC</div><div class="line">   如果</div><div class="line">        非要在这个滚犊子</div><div class="line">    前</div><div class="line">        面&lt;br /&gt;</div><div class="line">       加上一段</div><div class="line">    &lt;i&gt;距离的话&lt;/i&gt;</div><div class="line">    我想说：&lt;h1&gt;思想有多远，你就跟我滚多远&lt;/h1&gt;</div><div class="line">ABC;</div><div class="line"><span class="built_in">echo</span> <span class="variable">$dingjie</span>;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/24/php-7-days-note/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -720,6 +457,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -739,8 +480,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -858,6 +608,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RBAC权限管理系统—-1-数据表设计"><span class="nav-number">1.</span> <span class="nav-text">RBAC权限管理系统—(1)数据表设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、什么是RBAC"><span class="nav-number">1.1.</span> <span class="nav-text">一、什么是RBAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、ThinkPHP中的RBAC"><span class="nav-number">1.2.</span> <span class="nav-text">二、ThinkPHP中的RBAC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表分析"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据表分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">1.2.2.</span> <span class="nav-text">创建数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">1.3.</span> <span class="nav-text">参考链接:</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -990,6 +756,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
