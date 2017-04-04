@@ -1,5 +1,5 @@
 ---
-title: 2017-03-24 博客开通暨Hexo博客程序搭建和维护
+title: 博客开通暨Hexo博客程序搭建和维护
 categories:   # 这里写的分类会自动汇集到 categories 页面上，分类可以多级
  - 开发工具
 tags: # 这里写的标签会自动汇集到 tags 页面上

@@ -1,5 +1,5 @@
 ---
-title: 2017-04-03 RBAC权限管理系统---(1)数据表设计
+title: RBAC权限管理系统---(1)数据表设计
 date: 2017-04-03 11:31:49
 categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级
  - web开发
@@ -26,45 +26,45 @@ tags: # 这里写的标签会自动汇集到 tags 页面上
 
 think_user:    
 ```
-id(用户标识)
+id(用户ID-用户标识)
 username(用户名)
 password(密码)
-logintime(登录时间)
-loginip(登录IP)
-status(状态)
+logintime(最近一次登录时间-时间戳)
+loginip(最近登录的IP地址)
+status(启用状态:0表示禁用;1表示启用)
 ```
 
 think_role:   
 ```
-id(角色标识)
-name(名称)
-pid(角色识别)
-status(状态)
+id(角色ID-角色标识)
+name(角色名称)
+pid(角色识别-父角色对应ID)
+status(启用状态)
 remark(备注)
 ```
 
 think_role_user:    
 ```
-role_id(角色标识)
-user_id(用户标识)
+role_id(角色ID-角色标识)
+user_id(用户ID-用户标识)
 ```
 
 think_node:   
 ```
-id(权限标识)
-name(权限英文名称)
-title(权限中文名称)
-status(状态)
+id(节点ID-权限标识)
+name(节点(权限)名称-(英文名，对应应用控制器、应用、方法名))
+title(节点(权限)中文名)
+status(启用状态)
 remark(备注)
-sort(排序)
-pid(父标识)
-level(层次)
+sort(排序值(默认为50))
+pid(父节点ID（如:方法pid对应相应的控制器）)
+level(节点类型：1:表示应用（模块）；2:表示控制器；3：表示方法)
 ```
 
 think_access:   
 ```
-role_id(角色标识)
-node_id(权限标识)
+role_id(角色ID-角色标识)
+node_id(节点ID-权限标识)
 level(层次)
 pid(父标识)
 module(模块)
@@ -162,6 +162,7 @@ CREATE TABLE IF NOT EXISTS `think_user` (
   `status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
 ```
 
 

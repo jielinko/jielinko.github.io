@@ -1,5 +1,6 @@
 ---
-title: 2017-03-30 php学习笔记
+title: php学习笔记
+date: 2017-03-30 
 categories:   # 这里写的分类会自动汇集到 categories 页面上，分类可以多级
  - web开发
 tags: # 这里写的标签会自动汇集到 tags 页面上
