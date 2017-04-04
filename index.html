@@ -368,90 +368,18 @@
 
       
         
-          
-            <p>ThinkPhP权限管理（3.2.3-5.0）</p>
-<h2 id="关于此项目的说明"><a href="#关于此项目的说明" class="headerlink" title="关于此项目的说明"></a>关于此项目的说明</h2><p><a href="http://www.kancloud.cn/a113211/alls" target="_blank" rel="external">链接地址</a></p>
+          <p>ThinkPhP权限管理（3.2.3-5.0）</p>
+<h2 id="关于此项目的说明"><a href="#关于此项目的说明" class="headerlink" title="关于此项目的说明"></a>关于此项目的说明</h2><p><a href="http://www.kancloud.cn/a113211/alls">链接地址</a></p>
 <p>包含三套源码:<br>1,前端模版源码<br>2,thinkphp3.2.3权限管理demo源码<br>3,thinkphp5.0权限管理demo源码</p>
-<p>demo地址: <a href="http://www.sucaime.com/think_right/" target="_blank" rel="external">http://www.sucaime.com/think_right/</a></p>
+<p>demo地址: <a href="http://www.sucaime.com/think_right/">http://www.sucaime.com/think_right/</a></p>
 <p>账号: test<br>密码: 123456</p>
-<h2 id="ThinkPHP-3-2-3-权限管理"><a href="#ThinkPHP-3-2-3-权限管理" class="headerlink" title="ThinkPHP 3.2.3 权限管理"></a>ThinkPHP 3.2.3 权限管理</h2><p>项目目录改为 rbac-test-3.2.3，安装成功后 去登录后访问</p>
-<p><a href="http://localhost/rbac-test-3.2.3/index.php" target="_blank" rel="external">后台</a> 或者 <a href="http://localhost/rbac-test-3.2.3/index.php/Home/Index/index/" target="_blank" rel="external">后台</a></p>
-<p>默认账号：test<br>默认密码：12345 </p>
-<p>超级管理员 admin  <br>密码为：123456</p>
-<h3 id="管理设置-test"><a href="#管理设置-test" class="headerlink" title="管理设置 (test)"></a>管理设置 (test)</h3><h4 id="个人中心"><a href="#个人中心" class="headerlink" title="个人中心"></a>个人中心</h4><p>两个权限控制：   </p>
-<ol>
-<li>页面的访问权限: Admin/User/my_center   </li>
-<li>修改资料的权限: Admin/User/change_msg</li>
-</ol>
-<h3 id="权限控制-admin"><a href="#权限控制-admin" class="headerlink" title="权限控制 (admin)"></a>权限控制 (admin)</h3><h4 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h4><p>四个权限控制：</p>
-<ol>
-<li>权限管理页面: Admin/Rule/rule_list</li>
-<li>添加权限功能: Admin/Rule/add</li>
-<li>修改权限功能: Admin/Rule/edit</li>
-<li>删除权限功能: Admin/Rule/delete</li>
-</ol>
-<h4 id="角色管理"><a href="#角色管理" class="headerlink" title="角色管理"></a>角色管理</h4><p>五个权限控制：</p>
-<ol>
-<li>角色管理页面: Admin/Rule/rule_group</li>
-<li>新增角色功能: Admin/Rule/add_group</li>
-<li>修改角色功能: Admin/Rule/edit_group</li>
-<li>删除角色功能: Admin/Rule/delet_group</li>
-<li>分配角色功能: Admin/Rule/rule_distribution</li>
-</ol>
-<h4 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h4><p>三个权限控制：</p>
-<ol>
-<li>用户管理页面: Admin/User/index</li>
-<li>新增用户功能: Admin/User/add_user</li>
-<li>修改用户功能: Admin/User/edit_user</li>
-</ol>
-<h3 id="系统设置-admin"><a href="#系统设置-admin" class="headerlink" title="系统设置 (admin)"></a>系统设置 (admin)</h3><h4 id="文章管理"><a href="#文章管理" class="headerlink" title="文章管理"></a>文章管理</h4><p>四个权限控制：</p>
-<ol>
-<li>文章管理页面: Admin/Article/index</li>
-<li>新增文章功能: Admin/Article/add_art</li>
-<li>编辑文章功能: Admin/Article/adi_art</li>
-<li>修改删除功能: Admin/Article/del_art</li>
-</ol>
-<h2 id="ThinkPHP-5-0-权限管理"><a href="#ThinkPHP-5-0-权限管理" class="headerlink" title="ThinkPHP 5.0 权限管理"></a>ThinkPHP 5.0 权限管理</h2><p>项目目录改为 rbac-test-5.0， 安装成功后 需要新建并先导入数据库，并在congfig.php配置资源路径:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"web_root"</span>   =&gt; <span class="string">"/rbac-test-5.0/public/static"</span>,</div></pre></td></tr></table></figure>
-<p>5.0 访问 <a href="http://localhost/rbac-test-5.0/public/index.php/Home/index/index/" target="_blank" rel="external">后台</a></p>
-<p><a href="http://localhost/rbac-test-5.0/public/index.php" target="_blank" rel="external">http://localhost/rbac-test-5.0/public/index.php</a> 这个链接访问的是Index模块的Index控制器的index方法</p>
-<p>默认账号：test<br>默认密码：12345 </p>
-<p>超级管理员 admin  <br>密码为：123456</p>
-<h3 id="管理设置-test-1"><a href="#管理设置-test-1" class="headerlink" title="管理设置 (test)"></a>管理设置 (test)</h3><h4 id="个人中心-1"><a href="#个人中心-1" class="headerlink" title="个人中心"></a>个人中心</h4><p>两个权限控制：   </p>
-<ol>
-<li>页面的访问权限: Admin/User/my_center   </li>
-<li>修改资料的权限: Admin/User/change_msg</li>
-</ol>
-<h3 id="权限控制-admin-1"><a href="#权限控制-admin-1" class="headerlink" title="权限控制 (admin)"></a>权限控制 (admin)</h3><h4 id="权限管理-1"><a href="#权限管理-1" class="headerlink" title="权限管理"></a>权限管理</h4><p>四个权限控制：</p>
-<ol>
-<li>权限管理页面: Admin/Rule/rule_list</li>
-<li>添加权限功能: Admin/Rule/add</li>
-<li>修改权限功能: Admin/Rule/edit</li>
-<li>删除权限功能: Admin/Rule/delete</li>
-</ol>
-<h4 id="角色管理-1"><a href="#角色管理-1" class="headerlink" title="角色管理"></a>角色管理</h4><p>五个权限控制：</p>
-<ol>
-<li>角色管理页面: Admin/Rule/rule_group</li>
-<li>新增角色功能: Admin/Rule/add_group</li>
-<li>修改角色功能: Admin/Rule/edit_group</li>
-<li>删除角色功能: Admin/Rule/delet_group</li>
-<li>分配角色功能: Admin/Rule/rule_distribution</li>
-</ol>
-<h4 id="用户管理-1"><a href="#用户管理-1" class="headerlink" title="用户管理"></a>用户管理</h4><p>三个权限控制：</p>
-<ol>
-<li>用户管理页面: Admin/User/index</li>
-<li>新增用户功能: Admin/User/add_user</li>
-<li>修改用户功能: Admin/User/edit_user</li>
-</ol>
-<h3 id="系统设置-admin-1"><a href="#系统设置-admin-1" class="headerlink" title="系统设置 (admin)"></a>系统设置 (admin)</h3><h4 id="文章管理-1"><a href="#文章管理-1" class="headerlink" title="文章管理"></a>文章管理</h4><p>四个权限控制：</p>
-<ol>
-<li>文章管理页面: Admin/Article/index</li>
-<li>新增文章功能: Admin/Article/add_art</li>
-<li>编辑文章功能: Admin/Article/adi_art</li>
-<li>修改删除功能: Admin/Article/del_art</li>
-</ol>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/04/rbac-test-tp5-note/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
