@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端开发,后端开发,PHP,Javascript,thinkPHP,wordpress" />
+  <meta name="keywords" content="php,后端开发,thinkPHP,RBAC," />
 
 
 
@@ -87,15 +87,31 @@
 
 
 
-<meta name="description" content="Enjoy coding and writing!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jim的一亩三分">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="ThinkPhP权限管理（3.2.3-5.0）
+关于此项目的说明链接地址
+包含三套源码:1,前端模版源码2,thinkphp3.2.3权限管理demo源码3,thinkphp5.0权限管理demo源码
+demo地址: http://www.sucaime.com/think_right/
+账号: test密码: 123456
+ThinkPHP 3.2.3 权限管理项目目录改为 rbac-test-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017-04-04 RBAC权限管理笔记ThinkPHP（3.2.3和5.0）">
+<meta property="og:url" content="http://yoursite.com/2017/04/04/rbac-test-tp5-note/index.html">
 <meta property="og:site_name" content="Jim的一亩三分">
-<meta property="og:description" content="Enjoy coding and writing!">
+<meta property="og:description" content="ThinkPhP权限管理（3.2.3-5.0）
+关于此项目的说明链接地址
+包含三套源码:1,前端模版源码2,thinkphp3.2.3权限管理demo源码3,thinkphp5.0权限管理demo源码
+demo地址: http://www.sucaime.com/think_right/
+账号: test密码: 123456
+ThinkPHP 3.2.3 权限管理项目目录改为 rbac-test-">
+<meta property="og:updated_time" content="2017-04-04T14:00:31.860Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jim的一亩三分">
-<meta name="twitter:description" content="Enjoy coding and writing!">
+<meta name="twitter:title" content="2017-04-04 RBAC权限管理笔记ThinkPHP（3.2.3和5.0）">
+<meta name="twitter:description" content="ThinkPhP权限管理（3.2.3-5.0）
+关于此项目的说明链接地址
+包含三套源码:1,前端模版源码2,thinkphp3.2.3权限管理demo源码3,thinkphp5.0权限管理demo源码
+demo地址: http://www.sucaime.com/think_right/
+账号: test密码: 123456
+ThinkPHP 3.2.3 权限管理项目目录改为 rbac-test-">
 
 
 
@@ -123,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/04/rbac-test-tp5-note/"/>
 
 
 
 
 
-  <title> Jim的一亩三分 </title>
+  <title> 2017-04-04 RBAC权限管理笔记ThinkPHP（3.2.3和5.0） | Jim的一亩三分 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,9 +180,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -259,9 +273,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -291,10 +305,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/04/rbac-test-tp5-note/" itemprop="url">
-                  2017-04-04 RBAC权限管理笔记ThinkPHP（3.2.3和5.0）
-                </a>
+                2017-04-04 RBAC权限管理笔记ThinkPHP（3.2.3和5.0）
               
             
           </h1>
@@ -351,6 +362,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 此文章共浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
 
           
 
@@ -367,9 +383,7 @@
       
 
       
-        
-          
-            <p>ThinkPhP权限管理（3.2.3-5.0）</p>
+        <p>ThinkPhP权限管理（3.2.3-5.0）</p>
 <h2 id="关于此项目的说明"><a href="#关于此项目的说明" class="headerlink" title="关于此项目的说明"></a>关于此项目的说明</h2><p><a href="http://www.kancloud.cn/a113211/alls" target="_blank" rel="external">链接地址</a></p>
 <p>包含三套源码:<br>1,前端模版源码<br>2,thinkphp3.2.3权限管理demo源码<br>3,thinkphp5.0权限管理demo源码</p>
 <p>demo地址: <a href="http://www.sucaime.com/think_right/" target="_blank" rel="external">http://www.sucaime.com/think_right/</a></p>
@@ -451,488 +465,78 @@
 <li>修改删除功能: Admin/Article/del_art</li>
 </ol>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/03/rbac-tp5-database-design/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jim">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jim的一亩三分">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/03/rbac-tp5-database-design/" itemprop="url">
-                  2017-04-03 RBAC权限管理系统---(1)数据表设计
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-03T11:31:49+08:00">
-                2017-04-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web开发/" itemprop="url" rel="index">
-                    <span itemprop="name">web开发</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/php/" rel="tag"># php</a>
           
-
+            <a href="/tags/后端开发/" rel="tag"># 后端开发</a>
           
-            
+            <a href="/tags/thinkPHP/" rel="tag"># thinkPHP</a>
           
-
+            <a href="/tags/RBAC/" rel="tag"># RBAC</a>
           
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          <h1 id="RBAC权限管理系统—-1-数据表设计"><a href="#RBAC权限管理系统—-1-数据表设计" class="headerlink" title="RBAC权限管理系统—(1)数据表设计"></a>RBAC权限管理系统—(1)数据表设计</h1><h2 id="一、什么是RBAC"><a href="#一、什么是RBAC" class="headerlink" title="一、什么是RBAC"></a>一、什么是RBAC</h2><p>基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。<br>在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。<br>在一个组织中，角色是为了完成各种工作而创造，用户则依据它的责任和资格来被指派相应的角色，用户可以很容易地从一个角色被指派到另一个角色。角色可依新的需求和系统的合并而赋予新的权限，而权限也可根据需要而从某角色中回收。角色与角色的关系可以建立起来以囊括更广泛的客观情况。</p>
-<h2 id="二、ThinkPHP中的RBAC"><a href="#二、ThinkPHP中的RBAC" class="headerlink" title="二、ThinkPHP中的RBAC"></a>二、ThinkPHP中的RBAC</h2><p>通过 5 张表实现权限控制：用户表(think_user),角色表(think_role)-也是用户分组表,权限表(think_node)-操作节点,用户角色表(think_role_user)-用户和角色(用户组)的对应,角色权限表(think_access)-各个操作和角色(用户组）的对应(node_role);</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/03/rbac-tp5-database-design/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/03/rbac-tp5-database-design/" rel="next" title="2017-04-03 RBAC权限管理系统---(1)数据表设计">
+                <i class="fa fa-chevron-left"></i> 2017-04-03 RBAC权限管理系统---(1)数据表设计
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/php-7-days-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jim">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jim的一亩三分">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/30/php-7-days-note/" itemprop="url">
-                  2017-03-30 php学习笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T00:00:00+08:00">
-                2017-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web开发/" itemprop="url" rel="index">
-                    <span itemprop="name">web开发</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>此笔记由博主根据<a href="www.phpxy.com">php学院教程</a>结合自身情况和工作需要做的总结笔记，以备查漏补缺，内容仅供参考，版权归其所有。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="定界符声明"><a href="#定界符声明" class="headerlink" title="定界符声明"></a>定界符声明</h4><p>1).在变量后面的等号写三个小于号（&lt;&lt;&lt;）。<br>2).然后在&lt;&lt;&lt;后面写上字符（建议英文大写字符）。如下例中的：ABC<br>3).然后换行写上任意想写的字符<br>4).写完后，顶行。在行最开始处，再写上&lt;&lt;&lt;后面的字符和分号。如下例中的：ABC;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line"><span class="variable">$dingjie</span> = &lt;&lt;&lt;ABC</div><div class="line">   如果</div><div class="line">        非要在这个滚犊子</div><div class="line">    前</div><div class="line">        面&lt;br /&gt;</div><div class="line">       加上一段</div><div class="line">    &lt;i&gt;距离的话&lt;/i&gt;</div><div class="line">    我想说：&lt;h1&gt;思想有多远，你就跟我滚多远&lt;/h1&gt;</div><div class="line">ABC;</div><div class="line"><span class="built_in">echo</span> <span class="variable">$dingjie</span>;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/30/php-7-days-note/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/24/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jim">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jim的一亩三分">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/24/hello-world/" itemprop="url">
-                  2017-03-24 博客开通暨Hexo博客程序搭建和维护
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T20:04:59+08:00">
-                2017-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/开发工具/" itemprop="url" rel="index">
-                    <span itemprop="name">开发工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>最近整理学习资料,发现在学习过程中总结的一些知识点都很分散,也不系统,考虑再三后还是决定自己搭建一个博客平台。再深入比较ghost,Jekyll,和hexo后选择了Hexo。</p>
-<p>该方案基于 Hexo + nextT + github。参考了这篇<a href="http://www.maintao.com/2014/hexo-beginner%27s-guide/">hexo入门</a>指南用起来确实很爽,第一篇博文留给Hexo,以表敬意！</p>
-<p>Hexo中文官网: <a href="https://hexo.io/zh-cn/docs/index.html">Hexo中文</a>！<br>NextT主题官网: <a href="http://theme-next.iissnan.com/">hexo-theme-next</a><br>Markdown语法: <a href="http://www.appinn.com/markdown/">Markdown</a>   </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/24/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -940,6 +544,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -959,8 +567,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -1078,6 +695,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于此项目的说明"><span class="nav-number">1.</span> <span class="nav-text">关于此项目的说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThinkPHP-3-2-3-权限管理"><span class="nav-number">2.</span> <span class="nav-text">ThinkPHP 3.2.3 权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#管理设置-test"><span class="nav-number">2.1.</span> <span class="nav-text">管理设置 (test)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#个人中心"><span class="nav-number">2.1.1.</span> <span class="nav-text">个人中心</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权限控制-admin"><span class="nav-number">2.2.</span> <span class="nav-text">权限控制 (admin)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#权限管理"><span class="nav-number">2.2.1.</span> <span class="nav-text">权限管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#角色管理"><span class="nav-number">2.2.2.</span> <span class="nav-text">角色管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户管理"><span class="nav-number">2.2.3.</span> <span class="nav-text">用户管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统设置-admin"><span class="nav-number">2.3.</span> <span class="nav-text">系统设置 (admin)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文章管理"><span class="nav-number">2.3.1.</span> <span class="nav-text">文章管理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThinkPHP-5-0-权限管理"><span class="nav-number">3.</span> <span class="nav-text">ThinkPHP 5.0 权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#管理设置-test-1"><span class="nav-number">3.1.</span> <span class="nav-text">管理设置 (test)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#个人中心-1"><span class="nav-number">3.1.1.</span> <span class="nav-text">个人中心</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权限控制-admin-1"><span class="nav-number">3.2.</span> <span class="nav-text">权限控制 (admin)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#权限管理-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">权限管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#角色管理-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">角色管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户管理-1"><span class="nav-number">3.2.3.</span> <span class="nav-text">用户管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统设置-admin-1"><span class="nav-number">3.3.</span> <span class="nav-text">系统设置 (admin)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文章管理-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">文章管理</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1210,6 +843,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
