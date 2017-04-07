@@ -517,22 +517,17 @@
 
       
         
-          
-            <p>THINKPHP_模版系统变量$Think</p>
+          <p>THINKPHP_模版系统变量$Think</p>
 <h2 id="系统变量输出"><a href="#系统变量输出" class="headerlink" title="系统变量输出"></a>系统变量输出</h2><p>普通的模板变量需要首先赋值后才能在模板中输出，但是系统变量则不需要，可以直接在模板中输出，系统变量的输出通常以 <strong>{$Think</strong> 打头，</p>
 <p>例如:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="variable">$Think</span>.server.script_name&#125; // 输出<span class="variable">$_SERVER</span>[<span class="string">'SCRIPT_NAME'</span>]变量</div><div class="line"></div><div class="line">&#123;<span class="variable">$Think</span>.session.user_id&#125; // 输出<span class="variable">$_SESSION</span>[<span class="string">'user_id'</span>]变量</div><div class="line"></div><div class="line">&#123;<span class="variable">$Think</span>.get.pageNumber&#125; // 输出<span class="variable">$_GET</span>[<span class="string">'pageNumber'</span>]变量</div><div class="line"></div><div class="line">&#123;<span class="variable">$Think</span>.cookie.name&#125;  // 输出<span class="variable">$_COOKIE</span>[<span class="string">'name'</span>]变量</div><div class="line"></div><div class="line">支持输出 <span class="variable">$_SERVER</span>、<span class="variable">$_ENV</span>、 <span class="variable">$_POST</span>、 <span class="variable">$_GET</span>、 <span class="variable">$_REQUEST</span>、<span class="variable">$_SESSION</span>和 <span class="variable">$_COOKIE</span>变量。</div></pre></td></tr></table></figure>
-<h2 id="常量输出"><a href="#常量输出" class="headerlink" title="常量输出"></a>常量输出</h2><p>例如:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="variable">$Think</span>.const.APP_PATH&#125;</div><div class="line"></div><div class="line">或者直接使用</div><div class="line"></div><div class="line">&#123;<span class="variable">$Think</span>.APP_PATH&#125;</div></pre></td></tr></table></figure>
-<h2 id="配置输出"><a href="#配置输出" class="headerlink" title="配置输出"></a>配置输出</h2><p>输出配置参数使用:</p>
-<p>例如:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="variable">$Think</span>.config.default_module&#125;</div><div class="line"></div><div class="line">&#123;<span class="variable">$Think</span>.config.default_controller&#125;</div></pre></td></tr></table></figure>
-<h2 id="系统语言变量"><a href="#系统语言变量" class="headerlink" title="系统语言变量"></a>系统语言变量</h2><p>输出语言变量可以使用:</p>
-<p>例如:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="variable">$Think</span>.lang.page_error&#125;</div><div class="line"></div><div class="line">&#123;<span class="variable">$Think</span>.lang.var_error&#125;</div></pre></td></tr></table></figure>
-<p>参考链接:<a href="https://my.oschina.net/miaowang/blog/299755" target="_blank" rel="external">THINKPHP_模版系统变量$Think</a><br><a href="http://www.kancloud.cn/manual/thinkphp5/125004" target="_blank" rel="external">系统变量</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/05/20170405-thinkphp-5-0-note/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

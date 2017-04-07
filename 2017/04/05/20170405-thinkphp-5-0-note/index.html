@@ -99,7 +99,7 @@
 系统变量输出普通的模板变量需要首先赋值后才能在模板中输出，但是系统变量则不需要，可以直接在模板中输出，系统变量的输出通常以 {$Think 打头，
 例如:
 123456789&amp;#123;$Think.server.script_name&amp;#125; // 输出$_SERVER[&apos;SCRIPT_NAME&apos;]变量&amp;#123;$Think.session.us">
-<meta property="og:updated_time" content="2017-04-05T02:33:32.423Z">
+<meta property="og:updated_time" content="2017-04-07T07:50:17.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="thinkPHP 5.0 笔记">
 <meta name="twitter:description" content="THINKPHP_模版系统变量$Think
@@ -381,6 +381,7 @@
 <h2 id="系统变量输出"><a href="#系统变量输出" class="headerlink" title="系统变量输出"></a>系统变量输出</h2><p>普通的模板变量需要首先赋值后才能在模板中输出，但是系统变量则不需要，可以直接在模板中输出，系统变量的输出通常以 <strong>{$Think</strong> 打头，</p>
 <p>例如:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="variable">$Think</span>.server.script_name&#125; // 输出<span class="variable">$_SERVER</span>[<span class="string">'SCRIPT_NAME'</span>]变量</div><div class="line"></div><div class="line">&#123;<span class="variable">$Think</span>.session.user_id&#125; // 输出<span class="variable">$_SESSION</span>[<span class="string">'user_id'</span>]变量</div><div class="line"></div><div class="line">&#123;<span class="variable">$Think</span>.get.pageNumber&#125; // 输出<span class="variable">$_GET</span>[<span class="string">'pageNumber'</span>]变量</div><div class="line"></div><div class="line">&#123;<span class="variable">$Think</span>.cookie.name&#125;  // 输出<span class="variable">$_COOKIE</span>[<span class="string">'name'</span>]变量</div><div class="line"></div><div class="line">支持输出 <span class="variable">$_SERVER</span>、<span class="variable">$_ENV</span>、 <span class="variable">$_POST</span>、 <span class="variable">$_GET</span>、 <span class="variable">$_REQUEST</span>、<span class="variable">$_SESSION</span>和 <span class="variable">$_COOKIE</span>变量。</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="常量输出"><a href="#常量输出" class="headerlink" title="常量输出"></a>常量输出</h2><p>例如:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="variable">$Think</span>.const.APP_PATH&#125;</div><div class="line"></div><div class="line">或者直接使用</div><div class="line"></div><div class="line">&#123;<span class="variable">$Think</span>.APP_PATH&#125;</div></pre></td></tr></table></figure>
 <h2 id="配置输出"><a href="#配置输出" class="headerlink" title="配置输出"></a>配置输出</h2><p>输出配置参数使用:</p>
