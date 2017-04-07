@@ -368,47 +368,16 @@
 
       
         
-          
-            <h2 id="PHP注释规范"><a href="#PHP注释规范" class="headerlink" title="PHP注释规范"></a>PHP注释规范</h2><p>注释在写代码的过程中非常重要，好的注释能让你的代码读起来更轻松，在写代码的时候一定要注意注释的规范。</p>
+          <h2 id="PHP注释规范"><a href="#PHP注释规范" class="headerlink" title="PHP注释规范"></a>PHP注释规范</h2><p>注释在写代码的过程中非常重要，好的注释能让你的代码读起来更轻松，在写代码的时候一定要注意注释的规范。</p>
 <h3 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$n</span> = 10; //数量n，这是单行注释</div></pre></td></tr></table></figure>
 <h3 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/* php注释语法</div><div class="line">   这是多行注释。*/</div></pre></td></tr></table></figure>
-<h3 id="文件头的注释"><a href="#文件头的注释" class="headerlink" title="文件头的注释"></a>文件头的注释</h3><p>介绍文件名，功能以及作者版本号等信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/** </div><div class="line">*文件名简单介绍</div><div class="line">* </div><div class="line">*文件功能。 </div><div class="line">* @author      alvin 作者</div><div class="line">* @version     1.0 版本号</div><div class="line">*/</div></pre></td></tr></table></figure>
-<h3 id="函数的注释"><a href="#函数的注释" class="headerlink" title="函数的注释"></a>函数的注释</h3><p>函数作用，参数介绍及返回类型</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/**  </div><div class="line">* 函数的含义说明 </div><div class="line">* </div><div class="line">* @access public </div><div class="line">* @param mixed <span class="variable">$arg1</span> 参数一的说明 </div><div class="line">* @param mixed <span class="variable">$arg2</span> 参数二的说明 </div><div class="line">* @param mixed <span class="variable">$mixed</span> 这是一个混合类型 </div><div class="line">* @<span class="built_in">return</span> array 返回类型</div><div class="line">*/</div></pre></td></tr></table></figure>
-<h3 id="类的注释"><a href="#类的注释" class="headerlink" title="类的注释"></a>类的注释</h3><p>类名及介绍</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/** </div><div class="line">* 类的介绍 </div><div class="line">* </div><div class="line">* 类的详细介绍（可选。）。 </div><div class="line">* @author      alvin 作者 </div><div class="line">* @version     1.0 版本号</div><div class="line">*/</div></pre></td></tr></table></figure>
-<h3 id="PHPDocumentor-代码注释规范"><a href="#PHPDocumentor-代码注释规范" class="headerlink" title="PHPDocumentor 代码注释规范"></a>PHPDocumentor 代码注释规范</h3><p><a href="https://www.phpdoc.org/docs/latest/index.html" target="_blank" rel="external">phpdoc官网</a></p>
-<h3 id="附录-文档标记"><a href="#附录-文档标记" class="headerlink" title="附录 文档标记"></a>附录 文档标记</h3><p>所有的文档标记都是在每一行的 * 后面以@开头。如果在一段话的中间出来@的标记，这个标记将会被当做普通内容而被忽略掉。</p>
-<h4 id="access"><a href="#access" class="headerlink" title="@access"></a>@access</h4><p>使用范围：class,function,var,define,module<br>该标记用于指明关键字的存取权限：private、public或proteced的使用范围：class,function,var,define,module</p>
-<h4 id="author"><a href="#author" class="headerlink" title="@author"></a>@author</h4><p>指明作者</p>
-<h4 id="copyright"><a href="#copyright" class="headerlink" title="@copyright"></a>@copyright</h4><p>使用范围：class，function，var，define，module，use<br>指明版权信息 </p>
-<h4 id="deprecated"><a href="#deprecated" class="headerlink" title="@deprecated"></a>@deprecated</h4><p>使用范围：class，function，var，define，module，constent，global，include<br>指明不用或者废弃的关键字</p>
-<h4 id="example"><a href="#example" class="headerlink" title="@example"></a>@example</h4><p>该标记用于解析一段文件内容，并将他们高亮显示。Phpdoc会试图从该标记给的文件路径中读取文件内容 </p>
-<h4 id="const"><a href="#const" class="headerlink" title="@const"></a>@const</h4><p>使用范围：define<br>用来指明php中define的常量</p>
-<h4 id="final"><a href="#final" class="headerlink" title="@final"></a>@final</h4><p>使用范围：class,function,var<br>指明关键字是一个最终的类、方法、属性，禁止派生、修改。</p>
-<h4 id="filesource"><a href="#filesource" class="headerlink" title="@filesource"></a>@filesource</h4><p>和example类似，只不过该标记将直接读取当前解析的php文件的内容并显示。</p>
-<h4 id="global"><a href="#global" class="headerlink" title="@global"></a>@global</h4><p>指明在此函数中引用的全局变量</p>
-<h4 id="ingore"><a href="#ingore" class="headerlink" title="@ingore"></a>@ingore</h4><p>用于在文档中忽略指定的关键字 </p>
-<h4 id="license"><a href="#license" class="headerlink" title="@license"></a>@license</h4><p>相当于html标签中的<a>,首先是URL，接着是要显示的内容<br>例如<a href="”http://www.baidu.com”">百度</a><br>可以写作 @license <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a> 百度</a></p>
-<h4 id="link"><a href="#link" class="headerlink" title="@link"></a>@link</h4><p>类似于license<br>但还可以通过link指到文档中的任何一个关键字 </p>
-<h4 id="name"><a href="#name" class="headerlink" title="@name"></a>@name</h4><p>为关键字指定一个别名。 </p>
-<h4 id="package"><a href="#package" class="headerlink" title="@package"></a>@package</h4><p>使用范围：页面级别的-&gt; define，function，include<br>类级别的-&gt;class，var，methods<br>用于逻辑上将一个或几个关键字分到一组。</p>
-<h4 id="abstrcut"><a href="#abstrcut" class="headerlink" title="@abstrcut"></a>@abstrcut</h4><p>说明当前类是一个抽象类 </p>
-<h4 id="param"><a href="#param" class="headerlink" title="@param"></a>@param</h4><p>指明一个函数的参数 </p>
-<h4 id="return"><a href="#return" class="headerlink" title="@return"></a>@return</h4><p>指明一个方法或函数的返回指 </p>
-<h4 id="static"><a href="#static" class="headerlink" title="@static"></a>@static</h4><p>指明关建字是静态的。 </p>
-<h4 id="var"><a href="#var" class="headerlink" title="@var"></a>@var</h4><p>指明变量类型</p>
-<h4 id="version"><a href="#version" class="headerlink" title="@version"></a>@version</h4><p>指明版本信息 </p>
-<h4 id="todo"><a href="#todo" class="headerlink" title="@todo"></a>@todo</h4><p>指明应该改进或没有实现的地方</p>
-<h4 id="throws"><a href="#throws" class="headerlink" title="@throws"></a>@throws</h4><p>指明此函数可能抛出的错误异常,极其发生的情况 </p>
-<p>上面提到过，普通的文档标记标记必须在每行的开头以@标记，除此之外，还有一种标记叫做inline tag,用{@}表示，</p>
-<p>具体包括以下几种：</p>
-<p>{@link}<br>用法同@link </p>
-<p>{@source}<br>显示一段函数或方法的内容  </p>
-<p>参考链接:<br><a href="https://zhidao.baidu.com/question/546752811.html" target="_blank" rel="external">php中如何给类规范的注释</a><br><a href="http://www.cnblogs.com/ysdong/p/6028191.html" target="_blank" rel="external">php注释语法的规范</a><br><a href="https://sjolzy.cn/Specification-Summary-PHPDocument-code-comments.html" target="_blank" rel="external">PHPDocument 代码注释规范总结</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/07/20170407-note-format-in-php/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
