@@ -29,6 +29,8 @@ THINKPHP_模版系统变量$Think
 支持输出 $_SERVER、$_ENV、 $_POST、 $_GET、 $_REQUEST、$_SESSION和 $_COOKIE变量。
 ```
 
+<!-- more -->
+
 ## 常量输出
 
 例如:

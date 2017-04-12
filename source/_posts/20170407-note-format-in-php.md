@@ -1,5 +1,5 @@
 ---
-title: note-format-of-class-in-php
+title: PHP注释规范
 date: 2017-04-07 11:28:57
 categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级
  - web开发
@@ -24,6 +24,8 @@ $n = 10; //数量n，这是单行注释
 /* php注释语法
    这是多行注释。*/ 
 ```
+<!-- more -->
+- 
 
 ### 文件头的注释
 
@@ -76,6 +78,9 @@ $n = 10; //数量n，这是单行注释
 
 所有的文档标记都是在每一行的 * 后面以@开头。如果在一段话的中间出来@的标记，这个标记将会被当做普通内容而被忽略掉。
 
+#### @abstrcut 
+说明当前类是一个抽象类,抽象类的变量和方法
+
 #### @access 
 使用范围：class,function,var,define,module 
 该标记用于指明关键字的存取权限：private、public或proteced的使用范围：class,function,var,define,module
@@ -124,13 +129,9 @@ $n = 10; //数量n，这是单行注释
 为关键字指定一个别名。 
 
 #### @package 
-使用范围：页面级别的-> define，function，include 
-类级别的->class，var，methods 
-用于逻辑上将一个或几个关键字分到一组。
- 
-#### @abstrcut 
-说明当前类是一个抽象类 
-
+封装包的名称
+一组相关类，函数封装的包名称
+  
 #### @param 
 指明一个函数的参数 
 
@@ -145,7 +146,7 @@ $n = 10; //数量n，这是单行注释
  
 #### @version 
 指明版本信息 
-
+![](http://i.imgur.com/Y9Q0hYQ.jpg)
 #### @todo 
 指明应该改进或没有实现的地方
  
@@ -166,4 +167,5 @@ $n = 10; //数量n，这是单行注释
 [php中如何给类规范的注释](https://zhidao.baidu.com/question/546752811.html)
 [php注释语法的规范](http://www.cnblogs.com/ysdong/p/6028191.html)
 [PHPDocument 代码注释规范总结](https://sjolzy.cn/Specification-Summary-PHPDocument-code-comments.html)
+[PHP经验——PHPDoc PHP注释的标准文档（翻译自Wiki）](http://www.cnblogs.com/picaso/archive/2012/10/04/2711435.html)
 

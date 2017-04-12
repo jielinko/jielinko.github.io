@@ -29,15 +29,15 @@ think_user:
 id(用户ID-用户标识)
 username(用户名)
 password(密码)
-logintime(最近一次登录时间-时间戳)
-loginip(最近登录的IP地址)
+create_time(用户注册时间-时间戳)
+update_time(用户更新时间-时间戳)
 status(启用状态:0表示禁用;1表示启用)
 ```
 
 think_role:   
 ```
 id(角色ID-角色标识)
-name(角色名称)
+rolename(角色名称)
 pid(角色识别-父角色对应ID)
 status(启用状态)
 remark(备注)
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `think_node` (
 
 CREATE TABLE IF NOT EXISTS `think_role` (
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
+  `rolename` varchar(20) NOT NULL,
   `pid` smallint(6) DEFAULT NULL,
   `status` tinyint(1) unsigned DEFAULT NULL,
   `remark` varchar(255) DEFAULT NULL,
@@ -157,8 +157,8 @@ CREATE TABLE IF NOT EXISTS `think_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `password` varchar(32) NOT NULL,
-  `logintime` int(11) DEFAULT NULL,
-  `loginip` varchar(30) DEFAULT NULL,
+  `create_time` int(11) DEFAULT NULL,
+  `update_time` int(11) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
