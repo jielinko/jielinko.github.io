@@ -12,13 +12,7 @@ tags: # 这里写的标签会自动汇集到 tags 页面上
 
 # RBAC权限管理系统---(1)数据表设计
 
-## 一、什么是RBAC
-基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。
-在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。
-在一个组织中，角色是为了完成各种工作而创造，用户则依据它的责任和资格来被指派相应的角色，用户可以很容易地从一个角色被指派到另一个角色。角色可依新的需求和系统的合并而赋予新的权限，而权限也可根据需要而从某角色中回收。角色与角色的关系可以建立起来以囊括更广泛的客观情况。
-
-## 二、ThinkPHP中的RBAC
-通过 5 张表实现权限控制：用户表(think_user),角色表(think_role)-也是用户分组表,权限表(think_node)-操作节点,用户角色表(think_role_user)-用户和角色(用户组)的对应,角色权限表(think_access)-各个操作和角色(用户组）的对应(node_role);
+## 一、RBAC所依赖的5张数据表
 
 <!--more-->
 
@@ -114,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `think_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -131,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `think_role` (
   PRIMARY KEY (`id`),
   KEY `pid` (`pid`),
   KEY `status` (`status`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -161,14 +155,49 @@ CREATE TABLE IF NOT EXISTS `think_user` (
   `update_time` int(11) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 ```
 
+### 五张表的关系
 
-## 参考链接:
+这五张表的关系如下：   
+一个用户对应着多个角色；一个角色可以属于多个用户；是多对多的关系，需要用个中间表即role_user表；
+一个角色可以有多个权限；一个权限可以属于多个角色；是多对多的关系，需要有个中间表即access表；
+
+那node表示什么？
+
+node表是**记录权限的表**，说白了就是记录应用，控制器，及方法的表，即**要访问资源的集合**；
+比如要访问的Admin应用下的Index控制器下的index方法；
+
+从这里可以明确了TP5的**RBAC是控制用户对控制器及方法的访问权限进行权限的管理**。
+
+![](http://i.imgur.com/8FChxoZ.png)
+
+### 授权中心-Auth类的几个方法以及三个核心方法
+
+1,checkAccess()方法 检测当前模块和操作是否需要验证，返回bool类型
+
+2,checkLogin()方法 检测登录
+
+3,getAccessList()获取权限列表
+
+可以看出方法是依次获取项目模块，控制器，动作方法的权限的。
+
+4,saveAccessList()检测用户的权限列表，并将权限存储到SESSION中
+
+5,AccessDecision()权限决策，就是判断用户拥有哪些权限
+
+
+
+从代码中可以看出，权限判断是有两种方式一种是根据session中的权限列表进行校验，一种是每次都查询数据库进行校验（下面配置参数说明的时候会说明）
+
+在AccessDecision()方法中调用checkAccess()方法进行验证模块的过滤即去除不需要验证的模块，控制器和方法。知道了RBAC的实现思路，下面来使用Auth类进行权限验证。
+
+### 参考链接:
 
 [ThinkPHP的RBAC（基于角色权限控制）详解](http://www.cnblogs.com/tanteng/archive/2012/11/25/2787597.html)
+[Thinkphp3.2.3中的RBAC权限验证](http://blog.csdn.net/zp_00000/article/details/51236719)
 [RBAC权限设计](http://itopic.org/rbac-design.html)
 [权限设计管理](https://wenku.baidu.com/view/48f548c76137ee06eff918fe.html)
 [扩展RBAC用户角色权限设计方案](http://rongxh2010.iteye.com/blog/930648)
