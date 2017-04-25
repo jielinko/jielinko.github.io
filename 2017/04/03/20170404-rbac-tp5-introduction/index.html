@@ -99,13 +99,15 @@
 一,访问控制与RBAC模型1,访问控制：通常的多用户系统都会涉及到访问控制，所谓 访问控制，是指通过某种方式允许活限制用户访问能力及范围的一种方法。这主要是由于系统需要对关键资源进行保护，防止由于非法入侵或者误操作对业务系统造成破坏。
 简而言之，访问控制即哪些用户可以访问哪些资源。
 一般而言，访">
-<meta property="og:updated_time" content="2017-04-25T03:28:04.023Z">
+<meta property="og:image" content="http://i.imgur.com/8FChxoZ.png">
+<meta property="og:updated_time" content="2017-04-25T07:08:40.339Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RBAC权限管理系统---(0)前言">
 <meta name="twitter:description" content="RBAC权限管理系统—(0)前言最近在用TP5做RBAC权限控制，以下笔记采摘自互联网和自己总结归纳。
 一,访问控制与RBAC模型1,访问控制：通常的多用户系统都会涉及到访问控制，所谓 访问控制，是指通过某种方式允许活限制用户访问能力及范围的一种方法。这主要是由于系统需要对关键资源进行保护，防止由于非法入侵或者误操作对业务系统造成破坏。
 简而言之，访问控制即哪些用户可以访问哪些资源。
 一般而言，访">
+<meta name="twitter:image" content="http://i.imgur.com/8FChxoZ.png">
 
 
 
@@ -386,7 +388,9 @@
 <li><strong>客体</strong>：被保护的资源，通常是程序，数据，文件或者设备。   </li>
 <li><strong>访问策略</strong>：主体和客体的映射规则，确定一个主体是否对客体具有访问能力。  </li>
 </ul>
+<a id="more"></a>
 <h3 id="2-RBAC-Role-Base-Access-Controll"><a href="#2-RBAC-Role-Base-Access-Controll" class="headerlink" title="2,RBAC (Role-Base-Access-Controll)"></a>2,RBAC (Role-Base-Access-Controll)</h3><p>基于角色的访问控制（RBAC）的概念在七十年代就已经提出，但是直到九十年代由于安全需求的发展才又引起了广泛关注。RBAC 的核心思想是将系统资源的访问权限进行分类或者建立层次关系，抽象为角色的概念，然后根据安全策略将用户和角色关联，从而实现了用户和权限之间的对照。RBAC 通过引入角色并将其作为权限管理的中介，将访问控制系统分为两个部分，即<strong>权限与角色的关联</strong>和<strong>角色与用户的关联</strong>，具有灵活易控制的优点。</p>
+<p><img src="http://i.imgur.com/8FChxoZ.png" alt=""></p>
 <p>我的理解就是给用户赋予不同的角色，给角色服务不同的权限，权限可以看成要访问资源的集合，角色只是用户和权限的过渡层，可能会问为什要有一个角色过渡层，可以试想一下没有role过渡层，有多个用户有着相同的数个权限，分配管理权限的时候，要重复分配权限，工作量很大，更何况修改权限的时候，更麻烦，可以说不利于代码的维护，所以要有一个role的过渡层。下面来用TP5（thinkphp）来实现RBAC。</p>
 <h2 id="二、RBAC权限验证的大致流程"><a href="#二、RBAC权限验证的大致流程" class="headerlink" title="二、RBAC权限验证的大致流程:"></a>二、RBAC权限验证的大致流程:</h2><pre><code>1,验证当前操作是否需要验证
 2,验证是否登录
@@ -442,8 +446,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/30/20170404-php-7-days-note/" rel="next" title="php学习笔记">
-                <i class="fa fa-chevron-left"></i> php学习笔记
+              <a href="/2017/04/03/20170404-rbac-tp5-database-design/" rel="next" title="RBAC权限管理系统---(1)数据表设计">
+                <i class="fa fa-chevron-left"></i> RBAC权限管理系统---(1)数据表设计
               </a>
             
           </div>
@@ -452,8 +456,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/03/20170404-rbac-tp5-database-design/" rel="prev" title="RBAC权限管理系统---(1)数据表设计">
-                RBAC权限管理系统---(1)数据表设计 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/04/20170404-rbac-test-tp5-note/" rel="prev" title="RBAC权限管理笔记ThinkPHP（3.2.3和5.0）">
+                RBAC权限管理笔记ThinkPHP（3.2.3和5.0） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -526,7 +530,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -548,7 +552,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
