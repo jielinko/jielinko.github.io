@@ -87,16 +87,19 @@
 
 
 
-<meta name="description" content="RBAC权限管理系统—(1)数据表设计一、什么是RBAC基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。在一个组织中，角色是为了完成各种工作而创造，用户则依据它的责任和资格来被指派相应的角色，用户可以">
+<meta name="description" content="RBAC权限管理系统—(1)数据表设计一、RBAC所依赖的5张数据表数据表分析think_user:123456id(用户ID-用户标识)username(用户名)password(密码)create_time(用户注册时间-时间戳)update_time(用户更新时间-时间戳)status(启用状态:0表示禁用;1表示启用)
+think_role:12345id(角色ID-角色标识)rolena">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RBAC权限管理系统---(1)数据表设计">
 <meta property="og:url" content="http://yoursite.com/2017/04/03/20170404-rbac-tp5-database-design/index.html">
 <meta property="og:site_name" content="Jim的一亩三分">
-<meta property="og:description" content="RBAC权限管理系统—(1)数据表设计一、什么是RBAC基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。在一个组织中，角色是为了完成各种工作而创造，用户则依据它的责任和资格来被指派相应的角色，用户可以">
-<meta property="og:updated_time" content="2017-04-12T06:24:29.760Z">
+<meta property="og:description" content="RBAC权限管理系统—(1)数据表设计一、RBAC所依赖的5张数据表数据表分析think_user:123456id(用户ID-用户标识)username(用户名)password(密码)create_time(用户注册时间-时间戳)update_time(用户更新时间-时间戳)status(启用状态:0表示禁用;1表示启用)
+think_role:12345id(角色ID-角色标识)rolena">
+<meta property="og:updated_time" content="2017-04-25T03:27:17.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RBAC权限管理系统---(1)数据表设计">
-<meta name="twitter:description" content="RBAC权限管理系统—(1)数据表设计一、什么是RBAC基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。在一个组织中，角色是为了完成各种工作而创造，用户则依据它的责任和资格来被指派相应的角色，用户可以">
+<meta name="twitter:description" content="RBAC权限管理系统—(1)数据表设计一、RBAC所依赖的5张数据表数据表分析think_user:123456id(用户ID-用户标识)username(用户名)password(密码)create_time(用户注册时间-时间戳)update_time(用户更新时间-时间戳)status(启用状态:0表示禁用;1表示启用)
+think_role:12345id(角色ID-角色标识)rolena">
 
 
 
@@ -368,10 +371,7 @@
       
 
       
-        <h1 id="RBAC权限管理系统—-1-数据表设计"><a href="#RBAC权限管理系统—-1-数据表设计" class="headerlink" title="RBAC权限管理系统—(1)数据表设计"></a>RBAC权限管理系统—(1)数据表设计</h1><h2 id="一、什么是RBAC"><a href="#一、什么是RBAC" class="headerlink" title="一、什么是RBAC"></a>一、什么是RBAC</h2><p>基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。<br>在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。<br>在一个组织中，角色是为了完成各种工作而创造，用户则依据它的责任和资格来被指派相应的角色，用户可以很容易地从一个角色被指派到另一个角色。角色可依新的需求和系统的合并而赋予新的权限，而权限也可根据需要而从某角色中回收。角色与角色的关系可以建立起来以囊括更广泛的客观情况。</p>
-<h2 id="二、ThinkPHP中的RBAC"><a href="#二、ThinkPHP中的RBAC" class="headerlink" title="二、ThinkPHP中的RBAC"></a>二、ThinkPHP中的RBAC</h2><p>通过 5 张表实现权限控制：用户表(think_user),角色表(think_role)-也是用户分组表,权限表(think_node)-操作节点,用户角色表(think_role_user)-用户和角色(用户组)的对应,角色权限表(think_access)-各个操作和角色(用户组）的对应(node_role);</p>
-<a id="more"></a>
-<h3 id="数据表分析"><a href="#数据表分析" class="headerlink" title="数据表分析"></a>数据表分析</h3><p>think_user:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">id(用户ID-用户标识)</div><div class="line">username(用户名)</div><div class="line">password(密码)</div><div class="line">create_time(用户注册时间-时间戳)</div><div class="line">update_time(用户更新时间-时间戳)</div><div class="line">status(启用状态:0表示禁用;1表示启用)</div></pre></td></tr></table></figure></p>
+        <h1 id="RBAC权限管理系统—-1-数据表设计"><a href="#RBAC权限管理系统—-1-数据表设计" class="headerlink" title="RBAC权限管理系统—(1)数据表设计"></a>RBAC权限管理系统—(1)数据表设计</h1><h2 id="一、RBAC所依赖的5张数据表"><a href="#一、RBAC所依赖的5张数据表" class="headerlink" title="一、RBAC所依赖的5张数据表"></a>一、RBAC所依赖的5张数据表</h2><h3 id="数据表分析"><a href="#数据表分析" class="headerlink" title="数据表分析"></a>数据表分析</h3><p>think_user:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">id(用户ID-用户标识)</div><div class="line">username(用户名)</div><div class="line">password(密码)</div><div class="line">create_time(用户注册时间-时间戳)</div><div class="line">update_time(用户更新时间-时间戳)</div><div class="line">status(启用状态:0表示禁用;1表示启用)</div></pre></td></tr></table></figure></p>
 <p>think_role:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">id(角色ID-角色标识)</div><div class="line">rolename(角色名称)</div><div class="line">pid(角色识别-父角色对应ID)</div><div class="line">status(启用状态)</div><div class="line">remark(备注)</div></pre></td></tr></table></figure></p>
 <p>think_role_user:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">role_id(角色ID-角色标识)</div><div class="line">user_id(用户ID-用户标识)</div></pre></td></tr></table></figure></p>
 <p>think_node:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">id(节点ID-权限标识)</div><div class="line">name(节点(权限)名称-(英文名，对应应用控制器、应用、方法名))</div><div class="line">title(节点(权限)中文名)</div><div class="line">status(启用状态)</div><div class="line">remark(备注)</div><div class="line">sort(排序值(默认为50))</div><div class="line">pid(父节点ID（如:方法pid对应相应的控制器）)</div><div class="line">level(节点类型：1:表示应用（模块）；2:表示控制器；3：表示方法)</div></pre></td></tr></table></figure></p>
@@ -426,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/30/20170404-php-7-days-note/" rel="next" title="php学习笔记">
-                <i class="fa fa-chevron-left"></i> php学习笔记
+              <a href="/2017/04/03/20170404-rbac-tp5-introduction/" rel="next" title="RBAC权限管理系统---(0)前言">
+                <i class="fa fa-chevron-left"></i> RBAC权限管理系统---(0)前言
               </a>
             
           </div>
@@ -510,7 +510,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -623,7 +623,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RBAC权限管理系统—-1-数据表设计"><span class="nav-number">1.</span> <span class="nav-text">RBAC权限管理系统—(1)数据表设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、什么是RBAC"><span class="nav-number">1.1.</span> <span class="nav-text">一、什么是RBAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、ThinkPHP中的RBAC"><span class="nav-number">1.2.</span> <span class="nav-text">二、ThinkPHP中的RBAC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表分析"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据表分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">1.2.2.</span> <span class="nav-text">创建数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">1.3.</span> <span class="nav-text">参考链接:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RBAC权限管理系统—-1-数据表设计"><span class="nav-number">1.</span> <span class="nav-text">RBAC权限管理系统—(1)数据表设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、RBAC所依赖的5张数据表"><span class="nav-number">1.1.</span> <span class="nav-text">一、RBAC所依赖的5张数据表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表分析"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据表分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">1.1.2.</span> <span class="nav-text">创建数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">1.2.</span> <span class="nav-text">参考链接:</span></a></li></ol></li></ol></div>
             
 
           </div>
