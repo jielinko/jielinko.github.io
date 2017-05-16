@@ -174,25 +174,26 @@ node表是**记录权限的表**，说白了就是记录应用，控制器，及
 
 ![](http://i.imgur.com/8FChxoZ.png)
 
-### 授权中心-Auth类的几个方法以及三个核心方法
+### 授权中心-Rbac类的几个方法以及三个核心方法
 
-1,checkAccess()方法 检测当前模块和操作是否需要验证，返回bool类型
+1,**authenticate($map,$model='')方法** 传入查询用户的条件和用户表的Model，返回数组包含用户的信息
 
-2,checkLogin()方法 检测登录
+2,**saveAccessList($authId=null)方法: 检测用户的权限列表，并将权限存储到SESSION中** 传入用户的ID 此方法不返回值，只是设置 $_SESSION['_ACCESS_LIST']的值，其中包含了所有该用户对应的用户组的有权限操作的所有节点 $_SESSION['_ACCESS_LIST']['项目名']['模块名']['操作名']，以后判断权限就是判断当前项目，模块和操作是否在 $_SESSION['_ACCESS_LIST']中能找到。
 
-3,getAccessList()获取权限列表
+3,**checkAccess()方法** 检测当前模块和操作是否需要验证，返回bool类型
 
-可以看出方法是依次获取项目模块，控制器，动作方法的权限的。
+4,**checkLogin()方法** 检测登录
 
-4,saveAccessList()检测用户的权限列表，并将权限存储到SESSION中
-
-5,AccessDecision()权限决策，就是判断用户拥有哪些权限
-
-
+5,**AccessDecision($appName=APP_NAME)方法: 权限决策，就是判断用户拥有哪些权限** 就是检测当前项目模块操作 是否在$_SESSION['_ACCESS_LIST']数组中，也就是说 在 $_SESSION['_ACCESS_LIST'] 数组中$_SESSION['_ACCESS_LIST']['当前操作']['当前模块']['当前操作']是否存在。如果存在表示有权限 否则返回flase。
 
 从代码中可以看出，权限判断是有两种方式一种是根据session中的权限列表进行校验，一种是每次都查询数据库进行校验（下面配置参数说明的时候会说明）
 
 在AccessDecision()方法中调用checkAccess()方法进行验证模块的过滤即去除不需要验证的模块，控制器和方法。知道了RBAC的实现思路，下面来使用Auth类进行权限验证。
+
+6,**getAccessList($authId)方法: 获取权限列表** 通过查询数据库 返回权限列表 $_SESSION['_ACCESS_LIST']的值了。
+
+可以看出方法是依次获取项目模块，控制器，动作方法的权限的。
+
 
 ### 参考链接:
 
