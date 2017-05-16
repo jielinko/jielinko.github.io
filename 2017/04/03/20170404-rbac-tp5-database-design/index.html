@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Jim的一亩三分">
 <meta property="og:description" content="RBAC权限管理系统—(1)数据表设计一、RBAC所依赖的5张数据表">
 <meta property="og:image" content="http://i.imgur.com/8FChxoZ.png">
-<meta property="og:updated_time" content="2017-04-25T07:09:04.263Z">
+<meta property="og:updated_time" content="2017-04-25T07:37:51.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RBAC权限管理系统---(1)数据表设计">
 <meta name="twitter:description" content="RBAC权限管理系统—(1)数据表设计一、RBAC所依赖的5张数据表">
@@ -382,14 +382,15 @@
 <p>node表是<strong>记录权限的表</strong>，说白了就是记录应用，控制器，及方法的表，即<strong>要访问资源的集合</strong>；<br>比如要访问的Admin应用下的Index控制器下的index方法；</p>
 <p>从这里可以明确了TP5的<strong>RBAC是控制用户对控制器及方法的访问权限进行权限的管理</strong>。</p>
 <p><img src="http://i.imgur.com/8FChxoZ.png" alt=""></p>
-<h3 id="授权中心-Auth类的几个方法以及三个核心方法"><a href="#授权中心-Auth类的几个方法以及三个核心方法" class="headerlink" title="授权中心-Auth类的几个方法以及三个核心方法"></a>授权中心-Auth类的几个方法以及三个核心方法</h3><p>1,checkAccess()方法 检测当前模块和操作是否需要验证，返回bool类型</p>
-<p>2,checkLogin()方法 检测登录</p>
-<p>3,getAccessList()获取权限列表</p>
-<p>可以看出方法是依次获取项目模块，控制器，动作方法的权限的。</p>
-<p>4,saveAccessList()检测用户的权限列表，并将权限存储到SESSION中</p>
-<p>5,AccessDecision()权限决策，就是判断用户拥有哪些权限</p>
+<h3 id="授权中心-Rbac类的几个方法以及三个核心方法"><a href="#授权中心-Rbac类的几个方法以及三个核心方法" class="headerlink" title="授权中心-Rbac类的几个方法以及三个核心方法"></a>授权中心-Rbac类的几个方法以及三个核心方法</h3><p>1,<strong>authenticate($map,$model=’’)方法</strong> 传入查询用户的条件和用户表的Model，返回数组包含用户的信息</p>
+<p>2,<strong>saveAccessList($authId=null)方法: 检测用户的权限列表，并将权限存储到SESSION中</strong> 传入用户的ID 此方法不返回值，只是设置 $_SESSION[‘_ACCESS_LIST’]的值，其中包含了所有该用户对应的用户组的有权限操作的所有节点 $_SESSION[‘_ACCESS_LIST’][‘项目名’][‘模块名’][‘操作名’]，以后判断权限就是判断当前项目，模块和操作是否在 $_SESSION[‘_ACCESS_LIST’]中能找到。</p>
+<p>3,<strong>checkAccess()方法</strong> 检测当前模块和操作是否需要验证，返回bool类型</p>
+<p>4,<strong>checkLogin()方法</strong> 检测登录</p>
+<p>5,<strong>AccessDecision($appName=APP_NAME)方法: 权限决策，就是判断用户拥有哪些权限</strong> 就是检测当前项目模块操作 是否在$_SESSION[‘_ACCESS_LIST’]数组中，也就是说 在 $_SESSION[‘_ACCESS_LIST’] 数组中$_SESSION[‘_ACCESS_LIST’][‘当前操作’][‘当前模块’][‘当前操作’]是否存在。如果存在表示有权限 否则返回flase。</p>
 <p>从代码中可以看出，权限判断是有两种方式一种是根据session中的权限列表进行校验，一种是每次都查询数据库进行校验（下面配置参数说明的时候会说明）</p>
 <p>在AccessDecision()方法中调用checkAccess()方法进行验证模块的过滤即去除不需要验证的模块，控制器和方法。知道了RBAC的实现思路，下面来使用Auth类进行权限验证。</p>
+<p>6,<strong>getAccessList($authId)方法: 获取权限列表</strong> 通过查询数据库 返回权限列表 $_SESSION[‘_ACCESS_LIST’]的值了。</p>
+<p>可以看出方法是依次获取项目模块，控制器，动作方法的权限的。</p>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h3><p><a href="http://www.cnblogs.com/tanteng/archive/2012/11/25/2787597.html" target="_blank" rel="external">ThinkPHP的RBAC（基于角色权限控制）详解</a><br><a href="http://blog.csdn.net/zp_00000/article/details/51236719" target="_blank" rel="external">Thinkphp3.2.3中的RBAC权限验证</a><br><a href="http://itopic.org/rbac-design.html" target="_blank" rel="external">RBAC权限设计</a><br><a href="https://wenku.baidu.com/view/48f548c76137ee06eff918fe.html" target="_blank" rel="external">权限设计管理</a><br><a href="http://rongxh2010.iteye.com/blog/930648" target="_blank" rel="external">扩展RBAC用户角色权限设计方案</a><br><a href="http://blog.csdn.net/painsonline/article/details/7183613/" target="_blank" rel="external">RBAC权限管理</a><br><a href="https://www.lyblog.net/detail/552.html" target="_blank" rel="external">ThinkPHP中关于RBAC使用详解</a><br><a href="http://blog.sina.com.cn/s/blog_99730a660102vj7b.html" target="_blank" rel="external">ThinkPHP后台登录拦截器</a></p>
 
       
@@ -523,7 +524,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -545,7 +546,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -636,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RBAC权限管理系统—-1-数据表设计"><span class="nav-number">1.</span> <span class="nav-text">RBAC权限管理系统—(1)数据表设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、RBAC所依赖的5张数据表"><span class="nav-number">1.1.</span> <span class="nav-text">一、RBAC所依赖的5张数据表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表分析"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据表分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">1.1.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五张表的关系"><span class="nav-number">1.1.3.</span> <span class="nav-text">五张表的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#授权中心-Auth类的几个方法以及三个核心方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">授权中心-Auth类的几个方法以及三个核心方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">1.1.5.</span> <span class="nav-text">参考链接:</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RBAC权限管理系统—-1-数据表设计"><span class="nav-number">1.</span> <span class="nav-text">RBAC权限管理系统—(1)数据表设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、RBAC所依赖的5张数据表"><span class="nav-number">1.1.</span> <span class="nav-text">一、RBAC所依赖的5张数据表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表分析"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据表分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">1.1.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五张表的关系"><span class="nav-number">1.1.3.</span> <span class="nav-text">五张表的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#授权中心-Rbac类的几个方法以及三个核心方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">授权中心-Rbac类的几个方法以及三个核心方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">1.1.5.</span> <span class="nav-text">参考链接:</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
